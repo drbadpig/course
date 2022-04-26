@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\DepartmentController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Cache;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +25,6 @@ Route::get('/biba', function () {
 
 Route::get('/boba', [TestController::class, 'index']);
 
-Route::get('/cache', function () {
-    return Cache::get('key');
-});
+// Department routes
+
+Route::get('/departments/', [DepartmentController::class, 'index']);
