@@ -26,6 +26,7 @@ return new class extends Migration
         });
 
         Schema::table('users', function (Blueprint $table) {
+            $table->unsignedBigInteger('worker_id')->unique()->nullable()->after('password');
             $table->foreign('worker_id')->references('id')->on('workers');
         });
     }
@@ -39,6 +40,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropForeign('users_worker_id_foreign');
+            $table->dropColumn('worker_id');
         });
 
         Schema::dropIfExists('workers');
