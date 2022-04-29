@@ -16,4 +16,12 @@ class Worker extends Model
     {
         return $this->hasOne(User::class);
     }
+
+    /**
+     * Get the Role associated with the Worker.
+     */
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 }
