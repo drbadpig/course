@@ -41,4 +41,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the Worker associated with the user.
+     */
+    public function worker()
+    {
+        return $this->belongsTo(Worker::class);
+    }
 }

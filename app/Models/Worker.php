@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Worker extends Model
 {
     use HasFactory;
+
+    /**
+     * Get the User associated with the Worker.
+     */
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
 }
