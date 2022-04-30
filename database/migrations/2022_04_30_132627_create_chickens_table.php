@@ -19,7 +19,7 @@ return new class extends Migration
             $table->double('weight');
             $table->boolean('state');
             $table->unsignedBigInteger('breed_id');
-            $table->unsignedBigInteger('cage_id');
+            $table->unsignedBigInteger('cage_id')->unique();
             $table->unsignedBigInteger('worker_id');
             $table->timestamps();
             $table->softDeletes();
