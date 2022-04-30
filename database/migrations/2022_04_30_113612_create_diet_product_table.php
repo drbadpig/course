@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('diet_id');
             $table->unsignedBigInteger('product_id');
+            $table->double('portion');
             $table->timestamps();
 
             $table->foreign('diet_id')->references('id')->on('diets');
