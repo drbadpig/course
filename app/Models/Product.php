@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+
+    /**
+     * Get products associated with the diet.
+     */
+    public function diets()
+    {
+        return $this->belongsToMany(Diet::class);
+    }
 }
