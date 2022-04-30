@@ -16,4 +16,12 @@ class Cage extends Model
     {
         return $this->belongsTo(Department::class);
     }
+
+    /**
+     * Get the chicken associated with the cage.
+     */
+    public function chicken()
+    {
+        return $this->hasOne(Chicken::class);
+    }
 }

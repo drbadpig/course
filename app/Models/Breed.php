@@ -16,4 +16,12 @@ class Breed extends Model
     {
         return $this->belongsTo(Diet::class);
     }
+
+    /**
+     * Get chickens associated with the Breed.
+     */
+    public function chickens()
+    {
+        return $this->hasMany(Chicken::class);
+    }
 }

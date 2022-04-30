@@ -24,4 +24,12 @@ class Worker extends Model
     {
         return $this->belongsTo(Role::class);
     }
+
+    /**
+     * Get chickens associated with the Worker.
+     */
+    public function chickens()
+    {
+        return $this->hasMany(Chicken::class);
+    }
 }
